@@ -7,14 +7,56 @@
   /* font-style: normal; */
   /* font-display: swap; */
 }
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('/fonts/MonaSans-VariableFont_wdth,wght.ttf') format('opentype');
+  /* font-weight: 700; */
+  /* font-style: normal; */
+  /* font-display: swap; */
+}
 
 .font-modern-negra-demo {
   font-family: 'Modern Negra Demo', sans-serif;
+}
+.font-mona-sans {
+  font-family: 'Mona Sans', sans-serif;
 }
 
 html {
   width: 100dvw;
   overflow-x: hidden;
-  scroll-behavior: smooth;
-  /* font-family: "Modern Negra Demo", sans-serif; */
+  /* scroll-behavior: smooth; */
+  font-family: 'Mona Sans', sans-serif;
+  color: white;
 }
+
+/* hero bg noise overlay effect */
+page-header {
+  background-image: url(https://i.imgur.com/4zPdqam.jpg);
+  background-size:cover;
+}
+
+/* .noise-effect:after {
+  animation: grain 8s steps(10) infinite;
+  background-image: url(https://i.imgur.com/WiKKBSw.jpg);
+  content: "";
+  height: 300%;
+  left: -50%;
+  opacity: 0.12;
+  position: fixed;
+  top: -110%;
+  width: 300%;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0) }
+  10% { transform:translate(-5%, -10%) }
+  20% { transform:translate(-15%, 5%) }
+  30% { transform:translate(7%, -25%) }
+  40% { transform:translate(-5%, 25%) }
+  50% { transform:translate(-15%, 10%) }
+  60% { transform:translate(15%, 0%) }
+  70% { transform:translate(0%, 15%) }
+  80% { transform:translate(3%, 35%) }
+  90% { transform:translate(-10%, 10%) }
+} */

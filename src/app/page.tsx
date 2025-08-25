@@ -4,7 +4,6 @@ import Art from "@/sections/Art";
 import Hero from "@/sections/Hero";
 import DrinkMenu from "@/sections/DrinkMenu";
 import Contact from "@/sections/Contact";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -14,8 +13,7 @@ export default function Home() {
       {/* <AboutUs/> */}
       <Art /> 
       <DrinkMenu />
-      {/* <Contact /> */}
-      {/* <Footer /> */}
+      <Contact />
 
     </div>
   );

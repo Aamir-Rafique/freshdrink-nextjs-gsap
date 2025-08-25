@@ -129,13 +129,13 @@ const drinkImages: IDrinkImages[] = [
 // Footer
 export interface ISocialImages {
     image: string;
+    alt: string;
 }
 
-
 const socialImages: ISocialImages[] = [
-    { image: '/images/insta.png' },
-    { image: '/images/x.png' },
-    { image: '/images/fb.png' },
+    { image: '/images/insta.png', alt: 'Instagram logo' },
+    { image: '/images/x.png', alt: 'X (Twitter) logo' },
+    { image: '/images/fb.png', alt: 'Facebook logo' },
 ];
 
 

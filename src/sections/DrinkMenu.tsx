@@ -49,7 +49,7 @@ const DrinkMenu = () => {
                             fill
                             objectFit='cover'
                             title='Previous'
-                            className='hover:bg-blue-200 rounded-2xl duration-300'
+                            className='hover:bg-gray-800 rounded-2xl duration-300'
                         />
                     </div>
                     <div className='relative h-9 w-9 md:h-10 md:w-10 cursor-pointer'>
@@ -59,14 +59,14 @@ const DrinkMenu = () => {
                             fill
                             objectFit='cover'
                             title='Next'
-                            className='hover:bg-blue-200 rounded-2xl duration-300'
+                            className='hover:bg-gray-800 rounded-2xl duration-300'
                         />
                     </div>
                 </div>
 
                 {/*  bg image - round gray/white - radial gradient*/}
                 <div className="mb-20 md:mb-0 md:mt-20 absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-x-hidden">
-                    <div className="w-full h-[300px] md:w-1/3 md:h-[400px] rounded-full bg-white/40 blur-[80px]" />
+                    <div className="w-full h-[300px] md:w-1/3 md:h-[50%] rounded-full bg-white/30 blur-[80px]" />
                 </div>
 
 
@@ -92,7 +92,7 @@ const DrinkMenu = () => {
                 </div>
 
                 {/* slider drinks images fot mobile */}
-                <div className=' md:hidden bg-red-300'>
+                <div className=' md:hidden'>
                     <div className='relative h-90 w-90 md:h-105 md:w-105 mt-5 md:mt-0 ' >
                         <Image
                             src='/images/drink1.png'

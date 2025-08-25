@@ -8,7 +8,7 @@ const Art = () => {
 
             {/*  bg image - round gray/white - radial gradient*/}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-x-hidden">
-                <div className="w-full h-[400px] md:w-1/3 md:h-[25rem] rounded-full bg-white/40 blur-[80px]" />
+                <div className="w-full h-[400px] md:w-1/3 md:h-[60%] rounded-full bg-white/30 blur-[80px]" />
             </div>
 
 

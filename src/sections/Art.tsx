@@ -41,8 +41,15 @@ const Art = () => {
                             </div>
                         </div>
                     ))}
-
                 </div>
+
+                    {/* masked-hidden image */}
+
+                    {/* hidden text */}
+                    <div className='text-center'>
+                        <h3 className='text-3xl font-modern-negra-demo'>Made with Craft - Poured with Passion</h3>
+                        <p className='px-5 font-semibold'>This isn’t just a drink. It’s a carefully crafted moment made just for you.</p>
+                    </div>
 
             </div>
         </section>

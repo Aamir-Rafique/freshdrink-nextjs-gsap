@@ -3,21 +3,22 @@ import Image from 'next/image'
 
 const Navbar = () => {
     return (
-        <nav className='h-27 w-full bg-black/50 fixed top-0 z-10'>
-            <div className='pt-4 h-14 w-full flex justify-center items-center'>
-                <div className='flex gap-2'>
+        <nav className='h-27 md:h-18 w-full bg-black/50 fixed top-0 z-10 md:flex items-center justify-between'>
+            <div className='h-14 pt-4 md:pt-0 md:h-1/2 w-full md:w-1/6 flex justify-center items-center '>
+                <div className='flex gap-2'>    
                     <div className='h-8 w-8 relative'>
                         <Image
                             src='/images/logo.png'
                             alt='Logo'
                             fill
+                            objectFit='cover'
                         />
                     </div>
                     <h3 className='font-modern-negra-demo text-3xl'>Fresh Drink</h3>
                 </div>
             </div>
 
-            <div className='h-13 w-full flex justify-center items-center  gap-6 text-sm font-semibold'>
+            <div className='h-13 md:h-1/2 w-full md:w-1/3 md:mr-5 flex justify-center items-center  gap-6 md:gap-12 text-sm md:text-base font-semibold md:font-normal'>
                 <a href="#">Drinks</a>
                 <a href="#">About Us</a>
                 <a href="#">The Art</a>

@@ -71,6 +71,7 @@ const aboutImages: IAboutImages[] = [
     { image: '/images/abt2.png' },
     { image: '/images/abt5.png' },
     { image: '/images/abt3.png' },
+    { image: '/images/abt6.png' },
     { image: '/images/abt4.png' },
 ];
 

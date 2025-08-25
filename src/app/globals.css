@@ -32,12 +32,13 @@
   font-family: 'DM Serif Text', sans-serif;
 }
 
-html {
-  width: 100dvw;
-  /* overflow-x: hidden; */
+html,body {
+  overflow-x: hidden;
+    height: 100%;
   /* scroll-behavior: smooth; */
   font-family: 'Mona Sans', sans-serif;
   color: white;
+    /* overscroll-behavior: none; */
 }
 
 /* hero bg noise overlay effect */
@@ -46,7 +47,7 @@ page-header {
   background-size:cover;
 }
 
-/* .noise-effect:after {
+.noise-effect:after {
   animation: grain 8s steps(10) infinite;
   background-image: url(https://i.imgur.com/WiKKBSw.jpg);
   content: "";
@@ -69,4 +70,4 @@ page-header {
   70% { transform:translate(0%, 15%) }
   80% { transform:translate(3%, 35%) }
   90% { transform:translate(-10%, 10%) }
-} */
+}

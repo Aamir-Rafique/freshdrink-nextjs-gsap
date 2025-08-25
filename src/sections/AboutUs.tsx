@@ -70,9 +70,9 @@ const AboutUs = () => {
 
                 {/* images */}
 
-                <div className='w-full flex flex-col gap-5 md:flex-none md:grid grid-cols-3'>
+                <div className='w-full flex flex-col gap-5 md:flex-none md:grid grid-cols-3     '>
                     {aboutImages.map((item) => (
-                        <div key={item.image} className='drink-Images h-72 w-full relative'>
+                        <div key={item.image} className='drink-Images h-72 w-full relative '>
                             <Image
                                 src={item.image}
                                 alt="about-images"

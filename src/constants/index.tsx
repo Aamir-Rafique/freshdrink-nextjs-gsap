@@ -106,6 +106,18 @@ const drinkImages: IDrinkImages[] = [
     { image: '/images/drink4.png' },
 ];
 
+// Footer
+export interface ISocialImages {
+    image: string;
+}
+
+
+const socialImages: ISocialImages[] = [
+    { image: '/images/insta.png' },
+    { image: '/images/x.png' },
+    { image: '/images/fb.png' },
+];
+
 
 //exporting above arrays
 export {
@@ -113,5 +125,6 @@ export {
     lovedDrinks,
     aboutImages,
     checkStatements,
-    drinkImages
+    drinkImages,
+    socialImages
 }

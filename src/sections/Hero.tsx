@@ -123,7 +123,7 @@ const Hero = () => {
     }, [])
 
     return (
-        <section className=' relative h-fit w-full px-5 md:px-15 bg-black/95 overflow-hidden'>
+        <section id='home' className=' relative h-fit w-full px-5 md:px-15 bg-black/95 overflow-hidden'>
 
             {/* Hero bg noise effect */}
             {/* <div className="h-full page-header noise-effect"></div> */}

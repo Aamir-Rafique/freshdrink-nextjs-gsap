@@ -4,7 +4,7 @@ import { drinkImages, socialImages } from '@/constants'
 
 const Contact = () => {
     return (
-        <section className='relative h-fit w-full px-8 bg-black overflow-hidden'>
+        <section id='contact' className='relative h-fit w-full px-8 bg-black overflow-hidden'>
 
             {/*  bg image - round gray/white - radial gradient*/}
             <div className="mb-20 absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-x-hidden">

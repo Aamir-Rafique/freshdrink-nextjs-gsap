@@ -45,7 +45,7 @@ const AboutUs = () => {
 
 
     return (
-        <section className='px-10 bg-black'>
+        <section id='about-us' className='px-10 bg-black'>
 
             <div className='pt-30 pb-30 flex flex-col gap-20'>
 

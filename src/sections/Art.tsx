@@ -4,7 +4,7 @@ import { checkStatementMd1, checkStatementMd2, checkStatements } from '@/constan
 
 const Art = () => {
     return (
-        <section className='relative h-fit w-full px-6  bg-black '>
+        <section id='art' className='relative h-fit w-full px-6  bg-black '>
 
             {/*  bg image - round gray/white - radial gradient*/}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-x-hidden">

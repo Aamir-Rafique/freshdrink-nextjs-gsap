@@ -4,7 +4,7 @@ import { drinkImages } from '@/constants'
 
 const DrinkMenu = () => {
     return (
-        <section className='relative h-fit w-full px-5 bg-black overflow-hidden'>
+        <section id='drink-menu' className='relative h-fit w-full px-5 bg-black overflow-hidden'>
 
             {/* leafs images */}
             <div className='absolute h-35 w-25 md:h-55 md:w-55 top-0 md:-top-18 right-0'>

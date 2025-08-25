@@ -6,14 +6,13 @@ const Art = () => {
     return (
         <section className='h-fit w-full px-6  bg-black '>
 
-            {/*  bg image - round gray*/}
-
+            {/*  bg image - round gray/white - radial gradient*/}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-x-hidden">
                 <div className="w-full h-[400px] rounded-full bg-white/40 blur-[80px]" />
             </div>
 
 
-            <div className='pt-30 pb-30 w-full '>
+            <div className='py-30 w-full '>
                 {/* title + mask image */}
                 <div className='relative flex flex-col items-center mb-15'>
                     <h1 className='absolute text-8xl font-modern-negra-demo'>The ART</h1>
@@ -43,13 +42,13 @@ const Art = () => {
                     ))}
                 </div>
 
-                    {/* masked-hidden image */}
+                {/* masked-hidden image */}
 
-                    {/* hidden text */}
-                    <div className='text-center'>
-                        <h3 className='text-3xl font-modern-negra-demo'>Made with Craft - Poured with Passion</h3>
-                        <p className='px-5 font-semibold'>This isn’t just a drink. It’s a carefully crafted moment made just for you.</p>
-                    </div>
+                {/* hidden text */}
+                <div className='text-center'>
+                    <h3 className='text-3xl font-dm-serif-text'>Made with Craft - Poured with Passion</h3>
+                    <p className='px-5 font-semibold'>This isn’t just a drink. It’s a carefully crafted moment made just for you.</p>
+                </div>
 
             </div>
         </section>

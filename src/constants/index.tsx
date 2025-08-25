@@ -93,6 +93,18 @@ const checkStatements: ICheckStatement[] = [
     { statement: 'Sip-Worthy Perfection' },
 ];
 
+// DrinkMenu section
+export interface IDrinkImages {
+    image: string;
+}
+
+
+const drinkImages: IDrinkImages[] = [
+    { image: '/images/drink1.png' },
+    { image: '/images/drink2.png' },
+    { image: '/images/drink3.png' },
+    { image: '/images/drink4.png' },
+];
 
 
 //exporting above arrays
@@ -100,5 +112,6 @@ export {
     popularDrinks,
     lovedDrinks,
     aboutImages,
-    checkStatements
+    checkStatements,
+    drinkImages
 }

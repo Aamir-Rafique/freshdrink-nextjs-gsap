@@ -14,12 +14,22 @@
   /* font-style: normal; */
   /* font-display: swap; */
 }
+@font-face {
+  font-family: 'DM Serif Text';
+  src: url('/fonts/DMSerifText-Regular.ttf') format('opentype');
+  /* font-weight: 700; */
+  /* font-style: normal; */
+  /* font-display: swap; */
+}
 
 .font-modern-negra-demo {
   font-family: 'Modern Negra Demo', sans-serif;
 }
 .font-mona-sans {
   font-family: 'Mona Sans', sans-serif;
+}
+.font-dm-serif-text {
+  font-family: 'DM Serif Text', sans-serif;
 }
 
 html {

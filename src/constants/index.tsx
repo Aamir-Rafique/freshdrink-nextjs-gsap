@@ -77,7 +77,7 @@ const aboutImages: IAboutImages[] = [
 
 
 
-// Art section..
+// Art section.. screens < md  (mobile etc.)
 export interface ICheckStatement {
     statement: string;
 }
@@ -92,6 +92,25 @@ const checkStatements: ICheckStatement[] = [
     { statement: 'Ice-cold every time' },
     { statement: 'Expertly shaken & stirred' },
     { statement: 'Sip-Worthy Perfection' },
+];
+
+// Art section.. screens >= md
+export interface ICheckStatementMd {
+    statement: string;
+}
+
+const checkStatementMd1: ICheckStatementMd[] = [
+    { statement: 'Handpicked ingredients' },
+    { statement: 'Signature techniques' },
+    { statement: 'Bartending artistry in action' },
+    { statement: 'Freshly muddled flavors' }
+]
+
+const checkStatementMd2: ICheckStatementMd[] = [
+    { statement: 'Perfectly balanced blends' },
+    { statement: 'Garnished to perfection' },
+    { statement: 'Ice-cold every time' },
+    { statement: 'Expertly shaken & stirred' },
 ];
 
 // DrinkMenu section
@@ -127,5 +146,7 @@ export {
     aboutImages,
     checkStatements,
     drinkImages,
-    socialImages
+    socialImages,
+    checkStatementMd1,
+    checkStatementMd2
 }

@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AboutUs = () => {
 
+
     useGSAP(() => {
 
         // About us - title
@@ -20,6 +21,19 @@ const AboutUs = () => {
             scrollTrigger: {
                 trigger: '.about-title',
                 start: 'top 80%',
+                end: 'bottom 60%',
+                // markers: true,
+            }
+        });
+        
+        // drink images
+        gsap.from('.drink-Images', {
+            opacity: 0,
+            y: 40,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: '.drink-Images',
+                start: 'top 75%',
                 end: 'bottom 60%',
                 // markers: true,
             }
@@ -58,13 +72,13 @@ const AboutUs = () => {
 
                 <div className='w-full flex flex-col gap-5 md:flex-none md:grid grid-cols-3'>
                     {aboutImages.map((item) => (
-                        <div key={item.image} className='h-72 w-full relative'>
+                        <div key={item.image} className='drink-Images h-72 w-full relative'>
                             <Image
                                 src={item.image}
                                 alt="about-images"
                                 fill
                                 objectFit='cover'
-                                className='rounded-3xl opacity-70 '
+                                className=' rounded-3xl opacity-70 '
                             />
                             <div className='h-full w-full  '>
                                 <Image

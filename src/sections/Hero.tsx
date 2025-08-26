@@ -94,10 +94,10 @@ const Hero = () => {
 
     return (
         <>
-            <section id='home' className=' relative h-fit w-full px-5 md:px-15 bg-black/95 overflow-hidden'>
+            <section id='home' className='noisy relative h-fit w-full px-5 md:px-15 bg-black/95 overflow-hidden'>
 
                 {/* Hero top */}
-                <div className='pt-40  md:pt-35 flex flex-col gap-2'>
+                <div className=' pt-40  md:pt-35 flex flex-col gap-2'>
                     <div className='flex justify-center'>
                         <h1 className='title text-7xl md:text-[12rem]  font-modern-negra-demo bg-gradient-to-t from-[#FFFFFF] to-[#F1F1F1] bg-clip-text text-transparent'>
                             LEMONADE
@@ -176,7 +176,7 @@ const Hero = () => {
 
 
                 {/* Hero Bottom */}
-                <div className='flex flex-col md:flex-row gap-25 md:gap-0 md:justify-between '>
+                <div className=' flex flex-col md:flex-row gap-25 md:gap-0 md:justify-between '>
 
                     {/* Popular Drinks */}
                     <div className='flex flex-col gap-8 md:z-10'>

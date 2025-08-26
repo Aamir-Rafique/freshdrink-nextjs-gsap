@@ -49,12 +49,12 @@ body {
 
 /* hero bg noise overlay effect */
 .noisy {
-  @apply  inset-0 size-full bg-[url("/images/noise.png")];
+  @apply inset-0 size-full bg-[url("/images/noise.png")];
 }
 
 /* about-us noisy bg  */
 .noisy-about {
-  @apply  rounded-3xl bg-[url("/images/noise.png")];
+  @apply rounded-3xl bg-[url("/images/noise.png")];
 }
 
 /* hero title animation */
@@ -63,4 +63,13 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+
+/* Art section: mask-image */
+.masked-img {
+  mask-image: url("/images/mask-img.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 50%;
 }

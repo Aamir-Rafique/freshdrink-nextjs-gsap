@@ -1,10 +1,40 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import { checkStatementMd1, checkStatementMd2, checkStatements } from '@/constants'
+import { useGSAP } from '@gsap/react'
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/all';
+import { useMediaQuery } from 'react-responsive'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Art = () => {
+
+    const isMobile: boolean = useMediaQuery({ maxWidth: 767 });
+
+    useGSAP(() => {
+        const start = isMobile ? 'top 20%' : 'top 10%';
+
+        const maskTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#art',
+                start: start,
+                end: 'bottom center',
+                scrub: 1.5,
+                // pin: true
+            }
+        })
+
+        maskTimeline
+            .to('.will-fade', { opacity: 0, stagger: 0.2, ease: 'power1.inOut', })
+            .to('.masked-img', { scale: 1.3, maskPosition: 'center', maskSize: '400%', duration: 1, ease: 'power1.inOut ' })
+            .to('#masked-content', { opacity: 1, duration: 1, ease: 'power1.inOut' })
+    })
+
+
     return (
-        <section id='art' className='relative h-fit w-full px-6  bg-black '>
+        <section id='art' className='relative h-fit w-full px-6 bg-black '>
 
             {/*  bg image - round gray/white - radial gradient*/}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-x-hidden">
@@ -13,64 +43,53 @@ const Art = () => {
 
 
             <div className='py-30 w-full '>
-                {/* title + mask image */}
+
                 <div className='relative flex flex-col items-center mb-15 '>
-                    <h1 className='absolute text-8xl md:text-[17rem] md:text-[#505050] font-modern-negra-demo'>The ART</h1>
+                    <h1 className='will-fade absolute text-8xl md:text-[17rem] md:text-[#505050] font-modern-negra-demo'>The ART</h1>
                     <div className='relative h-50 w-50 md:h-100 md:w-100 mt-5 md:mt-22'>
-                        <Image
-                            src='/images/mask-img.png'
-                            alt='Mask Image'
-                            fill
+
+                    </div>
+
+                    {/* masked image effect*/}
+                    <div className=" w-full md:w-[60vw] h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden absolute top-0 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2">
+                        <img
+                            src="/images/under-img.jpg"
+                            alt="Drink"
+                            className="masked-img absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-full object-contain"
                         />
                     </div>
 
                     {/* check statements - screens > md  */}
-                    <div className='hidden absolute bottom-0 pb-10 md:flex  w-full px-6 justify-between'>
-                        <div className=' '>
+                    <div className=' hidden absolute bottom-0 pb-10 md:flex  w-full px-10 justify-between'>
+                        <div className='will-fade '>
                             {checkStatementMd1.map((item) => (
                                 <div key={item.statement} className='flex  flex-col pb-4'>
                                     <div className='flex gap-1.5'>
-                                        <Image
-                                            src='/images/check.png'
-                                            alt='Check'
-                                            height={5}
-                                            width={22}
-                                        />
+                                        <img src="/images/check.png" alt="check" />
                                         <p className='text'>{item.statement}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                        <div className=' '>
+                        <div className='will-fade '>
                             {checkStatementMd2.map((item) => (
                                 <div key={item.statement} className='flex  flex-col pb-4'>
                                     <div className='flex gap-1.5'>
-                                        <Image
-                                            src='/images/check.png'
-                                            alt='Check'
-                                            height={5}
-                                            width={22}
-                                        />
+                                        <img src="/images/check.png" alt="check" />
                                         <p className='text'>{item.statement}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </div>
-
                 </div>
 
                 {/* check statements - screens < md  i.e. mobiles etc.*/}
-                <div className='md:hidden'>
+                <div className='will-fade md:hidden'>
                     {checkStatements.map((item) => (
                         <div key={item.statement} className='flex  flex-col pb-4'>
                             <div className='flex gap-1.5'>
-                                <Image
-                                    src='/images/check.png'
-                                    alt='Check'
-                                    height={5}
-                                    width={22}
-                                />
+                                <img src="/images/check.png" alt="check" />
                                 <p className='text'>{item.statement}</p>
                             </div>
                         </div>
@@ -78,13 +97,16 @@ const Art = () => {
                 </div>
 
 
-                {/* masked-hidden image */}
 
                 {/* hidden text */}
-                <div className='w-ful flex justify-center'>
+                <div className='masked-container w-ful flex justify-center'>
                     <div className='text-center md:flex flex-col md:gap-4.5 md:w-1/2'>
-                        <h3 className='text-3xl md:text-5xl font-dm-serif-text'>Made with Craft - Poured with Passion</h3>
-                        <p className='px-5 font-semibold md:font-normal md:text-lg'>This isn’t just a drink. It’s a carefully crafted moment made just for you.</p>
+                        <h2 className="will-fade text-5xl font-modern-negra-demo">Sip-Worthy Perfection</h2>
+
+                        <div id="masked-content" className='space-y-5 opacity-0'>
+                            <h3 className='text-3xl md:text-5xl font-dm-serif-text'>Made with Craft - Poured with Passion</h3>
+                            <p className='px-5 font-semibold md:font-normal md:text-lg'>This isn’t just a drink. It’s a carefully crafted moment made just for you.</p>
+                        </div>
                     </div>
                 </div>
 

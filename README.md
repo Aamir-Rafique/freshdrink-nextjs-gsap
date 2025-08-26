@@ -16,3 +16,4 @@
 
 ### lEarning
 - inset-0 
+- wherever using mask-image effect, set pin to ture in scrolltrigger

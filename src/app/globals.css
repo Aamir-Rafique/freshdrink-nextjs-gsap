@@ -38,13 +38,12 @@
 
 html,
 body {
-  overflow-x: hidden;
-  height: 100%;
-  scroll-behavior: smooth;
+  width: 100%;
   font-family: 'Mona Sans', sans-serif;
+  background-color: black;
   color: white;
-  /* overscroll-behavior: none; */
-  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 /* hero bg noise overlay effect */

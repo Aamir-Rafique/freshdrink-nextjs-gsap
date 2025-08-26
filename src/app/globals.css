@@ -72,3 +72,12 @@ page-header {
   80% { transform:translate(3%, 35%) }
   90% { transform:translate(-10%, 10%) }
 }
+
+
+/* hero title animation */
+@utility text-gradient {
+    background: linear-gradient(to bottom, #ffffff, #898989);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

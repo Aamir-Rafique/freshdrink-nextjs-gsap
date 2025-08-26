@@ -8,3 +8,11 @@
 ```
 
 ### prevent unwanted scrolling or dragging, especially on mobile
+- overflow-x-hidden
+
+
+### packages
+- pnpm install react-responsive (to get screen size using mediaquery)
+
+### lEarning
+- inset-0 

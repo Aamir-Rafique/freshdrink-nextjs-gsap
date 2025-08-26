@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
+import { SplitText } from "gsap/all";
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -13,13 +15,20 @@ const AboutUs = () => {
 
     useGSAP(() => {
 
-        // About us - title
-        gsap.from(".about-title p", {
+        // tagline
+        const paragraphSplit = new SplitText(".tagline", {
+            type: "lines"
+        });
+
+        gsap.from(paragraphSplit.lines, {
             opacity: 0,
-            y: 40,
-            stagger: 0.1,
+            yPercent: 100,
+            // y: 100,
+            duration: 1.8,
+            ease: "expo.out",
+            stagger: 0.09,
             scrollTrigger: {
-                trigger: '.about-title',
+                trigger: '.tagline',
                 start: 'top 80%',
                 end: 'bottom 60%',
                 // markers: true,
@@ -52,10 +61,10 @@ const AboutUs = () => {
                 <div className='flex flex-col md:flex-row justify-between items-start gap-6'>
                     <div className='flex flex-col gap-8 items-start'>
                         <a href="#" className='px-4 py-2 text-sm font-semibold rounded-3xl bg-white text-black'>Best Drinks</a>
-                        <h2 className='about-title text-5xl font-modern-negra-demo' >
-                            <p>Where every detail</p>
-                            <p>matters — from muddle</p>
-                            <p>to garnish</p>
+                        <h2 className='tagline about-title text-5xl font-modern-negra-demo' >
+                            Where every detail<br />
+                            matters — from muddle<br />
+                            to garnish
                         </h2>
                     </div>
 

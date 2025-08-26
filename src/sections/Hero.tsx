@@ -89,24 +89,12 @@ const Hero = () => {
             };
         }
 
+
     }, []);
 
     return (
         <>
             <section id='home' className=' relative h-fit w-full px-5 md:px-15 bg-black/95 overflow-hidden'>
-
-                {/* Hero bg noise effect */}
-                {/* <div className="h-full page-header noise-effect"></div> */}
-
-                <div className='h-full w-full  '>
-                    <Image
-                        src='/images/noise.png'
-                        alt='hero bg'
-                        fill
-                        objectFit='cover'
-                        className='contrast-150 saturate-200 '
-                    />
-                </div>
 
                 {/* Hero top */}
                 <div className='pt-40  md:pt-35 flex flex-col gap-2'>
@@ -228,16 +216,17 @@ const Hero = () => {
                 </div>
             </section>
 
-            {/* hero glass vid animation */}
-            <div className="w-full absolute inset-0 md:h-[80%] h-1/2  bottom-0 left-0 md:object-contain object-bottom object-cover ">
+            {/* Glass vid animation */}
+            {/* <div className=" absolute inset-0 ">
                 <video
                     ref={videoRef}
                     muted
                     playsInline
                     preload="auto"
                     src="/videos/hero-vid.mp4"
+                    className='w-full absolute h-1/2 md:h-[80%]  bottom-0 left-0  object-cover md:object-contain object-bottom' 
                 />
-            </div>
+            </div> */}
 
         </>
     )

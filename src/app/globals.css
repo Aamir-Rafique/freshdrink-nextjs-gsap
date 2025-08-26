@@ -52,6 +52,11 @@ body {
   @apply  inset-0 size-full bg-[url("/images/noise.png")];
 }
 
+/* about-us noisy bg  */
+.noisy-about {
+  @apply  rounded-3xl bg-[url("/images/noise.png")];
+}
+
 /* hero title animation */
 @utility text-gradient {
   background: linear-gradient(to bottom, #ffffff, #898989);

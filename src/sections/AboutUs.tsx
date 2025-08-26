@@ -25,7 +25,7 @@ const AboutUs = () => {
                 // markers: true,
             }
         });
-        
+
         // drink images
         gsap.from('.drink-Images', {
             opacity: 0,
@@ -69,10 +69,9 @@ const AboutUs = () => {
                 </div>
 
                 {/* images */}
-
                 <div className='w-full flex flex-col gap-5 md:flex-none md:grid grid-cols-3     '>
                     {aboutImages.map((item) => (
-                        <div key={item.image} className='drink-Images h-72 w-full relative '>
+                        <div key={item.image} className='noisy-about drink-Images h-72 w-full relative '>
                             <Image
                                 src={item.image}
                                 alt="about-images"
@@ -80,15 +79,6 @@ const AboutUs = () => {
                                 objectFit='cover'
                                 className=' rounded-3xl opacity-70 '
                             />
-                            <div className='h-full w-full  '>
-                                <Image
-                                    src='/images/noise.png'
-                                    alt='hero bg'
-                                    fill
-                                    objectFit='cover'
-                                    className='rounded-3xl contrast-150 saturate-200 '
-                                />
-                            </div>
                         </div>
                     ))}
 

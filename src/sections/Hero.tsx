@@ -217,13 +217,13 @@ const Hero = () => {
             </section>
 
             {/* Glass vid animation */}
-            {/* <div className=" absolute inset-0 ">
+            {/* <div className="absolute inset-0 ">
                 <video
                     ref={videoRef}
                     muted
                     playsInline
                     preload="auto"
-                    src="/videos/hero-vid.mp4"
+                    src="/videos/output.mp4"
                     className='w-full absolute h-1/2 md:h-[80%]  bottom-0 left-0  object-cover md:object-contain object-bottom' 
                 />
             </div> */}

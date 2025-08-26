@@ -10,12 +10,12 @@ export default function Home() {
   return (
     <div>
       {/* <Navbar /> */}
-      <Hero />
-      <HeroBottom/>
-      <AboutUs/>
+      {/* <Hero /> */}
+      {/* <HeroBottom/> */}
+      {/* <AboutUs/> */}
       {/* <Art />  */}
       <DrinkMenu />
-      <Contact />
+      {/* <Contact /> */}
 
     </div>
   );

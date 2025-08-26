@@ -113,18 +113,6 @@ const checkStatementMd2: ICheckStatementMd[] = [
     { statement: 'Expertly shaken & stirred' },
 ];
 
-// DrinkMenu section
-export interface IDrinkImages {
-    image: string;
-}
-
-
-const drinkImages: IDrinkImages[] = [
-    { image: '/images/drink1.png' },
-    { image: '/images/drink2.png' },
-    { image: '/images/drink3.png' },
-    { image: '/images/drink4.png' },
-];
 
 // Footer
 export interface ISocialImages {
@@ -138,6 +126,49 @@ const socialImages: ISocialImages[] = [
     { image: '/images/fb.png', alt: 'Facebook logo' },
 ];
 
+// Menu
+export interface IMenu {
+    id: Number;
+    title: string;
+    tagline: string;
+    description: string;
+    image: string;
+}
+
+const drinkMenu: IMenu[] = [
+    {
+        id: 1,
+        title: 'Classic ',
+        tagline: 'Simple Ingredients, Bold Flavor',
+        description: 'Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.',
+        image: '/images/drink1.png'
+    },
+    {
+        id: 2,
+        title: 'Raspberry',
+        tagline: 'A Zesty Classic That Never Fails',
+        description: 'The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.',
+        image: '/images/drink2.png'
+    },
+    {
+        id: 1,
+        title: 'Violet  ',
+        tagline: 'Simple Ingredients, Bold Flavor',
+        description: 'Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.',
+        image: '/images/drink3.png'
+    },
+    {
+        id: 4,
+        title: 'Curacao',
+        tagline: 'Crafted With Care, Poured With Love',
+        description: "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
+        image: '/images/drink4.png'
+    },
+
+];
+
+
+
 
 //exporting above arrays
 export {
@@ -145,7 +176,7 @@ export {
     lovedDrinks,
     aboutImages,
     checkStatements,
-    drinkImages,
+    drinkMenu,
     socialImages,
     checkStatementMd1,
     checkStatementMd2

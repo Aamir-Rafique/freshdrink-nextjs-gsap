@@ -3,12 +3,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/all';
 import React from 'react'
 import Image from 'next/image'
-import { drinkImages } from '@/constants'
+import { drinkMenu } from '@/constants'
 import { useGSAP } from '@gsap/react'
+import { useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const DrinkMenu = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useGSAP(() => {
 
@@ -24,8 +26,18 @@ const DrinkMenu = () => {
         })
             .to(".drinkMenu-right-leaf", { x: -100, y: 150 }, 0)
             .to(".drinkMenu-left-leaf", { x: 80, y: -80 }, 0)
+    }, [])
 
-    })
+    useGSAP(() => {
+
+        // Drink menu animations
+        const tl = gsap.timeline();
+
+        tl.from(".drink-image", { opacity: 0, x: -400, duration: 1.5 }, 0)
+            .from(".drink-title", { opacity: 0, y: 20, duration: 1.2 }, 0)
+            .from(".drink-para", { opacity: 0, y: 100, duration: 0.6, stagger:5}, 0)
+
+    }, [])
 
     return (
         <section id='drink-menu' className='relative h-fit w-full px-5 bg-black overflow-hidden'>
@@ -55,35 +67,35 @@ const DrinkMenu = () => {
                 {/* Drinks options */}
                 <div className='flex justify-center gap-15 md:gap-0 md:justify-between font-modern-negra-demo  md:px-45'>
                     <div className='flex flex-col md:flex-row gap-8 md:gap-20 md:justify-between '>
-                        <button className='text-2xl md:text-4xl md:px-8 md:py-2 cursor-pointer  border-b'>Classic</button>
-                        <button className='text-2xl md:text-4xl md:px-8 md:py-2 cursor-pointer border-b'>Violet</button>
+                        <button className={`text-2xl md:text-4xl md:px-8 md:py-2 cursor-pointer ${currentIndex === 0 ? 'text-white' : 'text-gray-500 hover:text-white'}  border-b`} onClick={() => setCurrentIndex(0)}>Classic</button>
+                        <button className={`text-2xl md:text-4xl md:px-8 md:py-2 cursor-pointer ${currentIndex === 1 ? 'text-white' : 'text-gray-500 hover:text-white'}  border-b`} onClick={() => setCurrentIndex(1)}>Violet</button>
                     </div>
                     <div className='flex flex-col md:flex-row gap-8 md:gap-20 md:justify-between '>
-                        <button className='text-2xl md:text-4xl md:px-8 md:py-2 cursor-pointer border-b' >Raspberry</button>
-                        <button className='text-2xl md:text-4xl md:px-8 md:py-2 cursor-pointer border-b' >Curacao</button>
+                        <button className={`text-2xl md:text-4xl md:px-8 md:py-2 cursor-pointer ${currentIndex === 2 ? 'text-white' : 'text-gray-500 hover:text-white'}  border-b`} onClick={() => setCurrentIndex(2)}>Raspberry</button>
+                        <button className={`text-2xl md:text-4xl md:px-8 md:py-2 cursor-pointer ${currentIndex === 3 ? 'text-white' : 'text-gray-500 hover:text-white'}  border-b`} onClick={() => setCurrentIndex(3)}>Curacao</button>
                     </div>
                 </div>
 
-                {/* left and right arrows */}
-                <div className='mt-20 md:mt-30 md:px-10 flex justify-between'>
+                {/* right  and left arrows */}
+                <div className='mt-20 md:mt-10 md:px-10 flex justify-between'>
                     <div className='relative h-9 w-9  md:h-10 md:w-10 cursor-pointer'>
-                        <Image
-                            src='/images/right-arrow.png'
-                            alt='leaf-image'
-                            fill
-                            objectFit='cover'
-                            title='Previous'
-                            className='hover:bg-gray-800 rounded-2xl duration-300'
+                        <img src="/images/right-arrow.png" alt="right-arrow" aria-hidden="true" className='hover:bg-gray-800 rounded-2xl duration-300'
+                            onClick={() => {
+                                if (currentIndex > 0) {
+                                    setCurrentIndex(currentIndex - 1)
+                                }
+                            }}
+                            title="Previous"
                         />
                     </div>
                     <div className='relative h-9 w-9 md:h-10 md:w-10 cursor-pointer'>
-                        <Image
-                            src='/images/left-arrow.png'
-                            alt='leaf-image'
-                            fill
-                            objectFit='cover'
-                            title='Next'
-                            className='hover:bg-gray-800 rounded-2xl duration-300'
+                        <img src="/images/left-arrow.png" alt="left-arrow" aria-hidden="true" className='hover:bg-gray-800 rounded-2xl duration-300'
+                            onClick={() => {
+                                if (currentIndex < 3) {
+                                    setCurrentIndex(currentIndex + 1)
+                                }
+                            }}
+                            title="Next"
                         />
                     </div>
                 </div>
@@ -95,25 +107,30 @@ const DrinkMenu = () => {
 
 
                 {/* Recipe Highlight + slider drink images */}
-                <div className='hidden md:flex pl-5  md:justify-between '>
-                    <div className='z-10 md:flex flex-col md:gap-3 md:justify-end'>
-                        <h4 className='md:text-lg'>Recipe for:</h4>
-                        <h3 className='text-6xl font-modern-negra-demo text-yellow-200'>Classic</h3>
-                    </div>
-                    <div className='md:flex w-[70%] justify-end '>
-                        <div className='relative  md:h-115 md:w-115 mt-5 md:mt-0 ' >
-                            <Image
-                                src='/images/drink1.png'
-                                alt='Mask Image'
-                                fill
-                            />
+
+                {drinkMenu.map((drink, index) => (
+                    currentIndex === index
+                    &&
+                    <div key={index} className='hidden md:flex pl-5 md:justify-between  '>
+                        <div className='z-10 md:flex flex-col md:gap-3 md:justify-end md:pb-10 md:pl-10 '>
+                            <h4 className='md:text-lg '>Recipe for:</h4>
+                            <h3 className='drink-title text-6xl font-modern-negra-demo text-yellow-200'>{drink.title}</h3>
                         </div>
-                        <div className='w-[50%] flex flex-col md:gap-4 md:justify-end'>
-                            <h3 className='text-5xl font-dm-serif-text'>Simple Ingredients, Bold Flavor</h3>
-                            <p className='md:text-lg w-[95%]'>Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.</p>
+                        <div className='md:flex w-[70%] justify-end '>
+                            <div className='drink-image relative  md:h-115 md:w-115 mt-5 md:mt-0' >
+                                <Image
+                                    src={drink.image}
+                                    alt='Mask Image'
+                                    fill
+                                />
+                            </div>
+                            <div className='drink-para w-[50%] flex flex-col md:gap-4 md:justify-end'>
+                                <h3 className='text-5xl font-dm-serif-text'>{drink.tagline}</h3>
+                                <p className='md:text-lg w-[95%]'>{drink.description}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                ))}
 
                 {/* slider drinks images fot mobile */}
                 <div className=' md:hidden'>

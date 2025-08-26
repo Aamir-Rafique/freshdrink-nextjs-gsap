@@ -67,7 +67,7 @@ const Hero = () => {
         const startValue = isMobile ? "top 50%" : "center 60%";
         const endValue = isMobile ? "120% top" : "bottom top";
 
-        let tl = gsap.timeline({
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "video",
                 start: startValue,
@@ -87,17 +87,16 @@ const Hero = () => {
             };
         }
 
-
     }, []);
 
     return (
         <>
-            <section id='home' className='noisy md:min-h-screen relative px-5 md:px-15 bg-black/95 '>
+            <section id='home' className='noisy md:min-h-screen relative px-5 md:px-15 bg-black/95 z'>
 
                 {/* Hero top */}
                 <div className=' pt-40  md:pt-35 flex flex-col gap-2'>
                     <div className='flex justify-center'>
-                        <h1 className='title text-7xl md:text-[12rem]  font-modern-negra-demo bg-gradient-to-t from-[#FFFFFF] to-[#F1F1F1] bg-clip-text text-transparent'>
+                        <h1 className='z-10 title text-7xl md:text-[12rem]  font-modern-negra-demo bg-gradient-to-t from-[#FFFFFF] to-[#F1F1F1] bg-clip-text text-transparent'>
                             LEMONADE
                         </h1>
                     </div>
@@ -150,22 +149,19 @@ const Hero = () => {
 
                     />
                 </div>
-
-
-
             </section>
 
             {/* Glass vid animation */}
-            {/* <div className=" absolute inset-0">
+            <div className=" absolute inset-0 ">
                 <video
                     ref={videoRef}
                     muted
-                    playsInline
+                    playsInline   //to prevent showing seekbar or vol up/down
                     preload="auto"
                     src="/videos/output.mp4"
-                    className='w-full absolute h-1/2 md:h-[80%]  bottom-0 left-0  object-cover md:object-contain object-bottom' 
+                    className=' w-full absolute h-1/2 md:h-[80%] bottom-0 left-0 object-cover md:object-contain ' 
                 />
-            </div> */}
+            </div>
 
         </>
     )

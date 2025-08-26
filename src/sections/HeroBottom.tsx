@@ -31,7 +31,7 @@ const HeroBottom = () => {
             {/* bottom left*/}
             <div className='bottom-left-leaf absolute h-30 w-30 md:h-78 md:w-78 bottom-0 md:-bottom-30 left-0 md:-left-30 '>
                 <Image
-                    src='/images/hero-bottom-left-leaf.png'
+                    src='/images/hero-bottom-left-leaf.png'     
                     alt='leaf-image'
                     fill
                     objectFit='cover'

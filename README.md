@@ -19,3 +19,4 @@
 - wherever using mask-image effect, set pin to ture in scrolltrigger
 
 - never user height: 100% for body/html
+- do not ask ai to write code directly for a feature, first ask to make a plan and then try to follow that step by step plan to implement it by yourself!!

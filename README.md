@@ -12,7 +12,7 @@
 
 
 ### packages
-- pnpm install react-responsive (to get screen size using mediaquery)
+- ~~react-responsive~~ - **Removed**: Replaced with native window.innerWidth for better SSR compatibility
 
 ### lEarning
 - inset-0 

@@ -6,15 +6,24 @@ import { gsap } from "gsap";
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
 import { SplitText } from "gsap/all";
-import { useMediaQuery } from "react-responsive";
 
 gsap.registerPlugin(ScrollTrigger);
 
 
 const Hero = () => {
     const videoRef = React.useRef<HTMLVideoElement | null>(null);
+    const [isMobile, setIsMobile] = React.useState(false);
 
-    const isMobile = useMediaQuery({ maxWidth: 767 });
+    React.useEffect(() => {
+        const checkIsMobile = () => {
+            setIsMobile(window.innerWidth <= 767);
+        };
+        
+        checkIsMobile();
+        window.addEventListener('resize', checkIsMobile);
+        
+        return () => window.removeEventListener('resize', checkIsMobile);
+    }, []);
 
     useGSAP(() => {
 
@@ -92,7 +101,7 @@ const Hero = () => {
             }
         }
 
-    }, []);
+    }, [isMobile]);
 
     return (
         <>
@@ -110,7 +119,7 @@ const Hero = () => {
                     <a href="#" className='text-xl font-bold mt-2 md:hidden'>View drinks</a>
                 </div>
 
-                {/* hero top sub-titles - if screen >= md:*/}
+                {/* hero  subtitles - if screen >= md:*/}
                 <div className=' hidden  md:flex md:mt-26  justify-between '>
                     <div className=' w-1/4 flex flex-col gap-5 z-20'>
                         <p className='text-lg'>Cool. Crisp. Classic</p>
@@ -151,7 +160,6 @@ const Hero = () => {
                         alt='leaf-image'
                         fill
                         objectFit='cover'
-
                     />
                 </div>
             </section>

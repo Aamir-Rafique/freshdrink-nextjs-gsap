@@ -9,13 +9,13 @@ import HeroBottom from "@/sections/HeroBottom";
 export default function Home() {
   return (
     <div>
-      {/* <Navbar /> */}
-      {/* <Hero /> */}
-      {/* <HeroBottom/> */}
-      {/* <AboutUs/> */}
-      {/* <Art />  */}
-      <DrinkMenu />
-      {/* <Contact /> */}
+      <Navbar />
+      <Hero />
+      <HeroBottom/>
+      <AboutUs/>
+      <Art /> 
+      <DrinkMenu /> 
+      <Contact />
 
     </div>
   );

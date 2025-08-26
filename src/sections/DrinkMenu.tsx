@@ -29,15 +29,13 @@ const DrinkMenu = () => {
     }, [])
 
     useGSAP(() => {
-
         // Drink menu animations
         const tl = gsap.timeline();
 
-        tl.from(".drink-image", { opacity: 0, x: -400, duration: 1.5 }, 0)
+        tl.from(".drink-image", { opacity: 0, x: -400, duration: 1.2 }, 0)
             .from(".drink-title", { opacity: 0, y: 20, duration: 1.2 }, 0)
-            .from(".drink-para", { opacity: 0, y: 100, duration: 0.6, stagger:5}, 0)
-
-    }, [])
+            .from(".drink-para", { opacity: 0, y: 100, duration: 0.6, stagger: 0.2 }, 0)
+    }, [currentIndex])
 
     return (
         <section id='drink-menu' className='relative h-fit w-full px-5 bg-black overflow-hidden'>
@@ -124,9 +122,9 @@ const DrinkMenu = () => {
                                     fill
                                 />
                             </div>
-                            <div className='drink-para w-[50%] flex flex-col md:gap-4 md:justify-end'>
-                                <h3 className='text-5xl font-dm-serif-text'>{drink.tagline}</h3>
-                                <p className='md:text-lg w-[95%]'>{drink.description}</p>
+                            <div className=' w-[50%] flex flex-col md:gap-4 md:justify-end'>
+                                <h3 className='drink-para text-5xl font-dm-serif-text'>{drink.tagline}</h3>
+                                <p className='drink-para md:text-lg w-[95%]'>{drink.description}</p>
                             </div>
                         </div>
                     </div>

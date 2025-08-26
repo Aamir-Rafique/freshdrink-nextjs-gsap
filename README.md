@@ -17,3 +17,5 @@
 ### lEarning
 - inset-0 
 - wherever using mask-image effect, set pin to ture in scrolltrigger
+
+- never user height: 100% for body/html

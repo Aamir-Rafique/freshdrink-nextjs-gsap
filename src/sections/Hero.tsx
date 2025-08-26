@@ -55,14 +55,12 @@ const Hero = () => {
                 trigger: "#home",
                 start: "top top",
                 end: "bottom top",
-                scrub: true,
+                scrub: 0.5,
                 // markers: true,
             }
         })
             .to(".top-right-leaf", { y: 150 }, 0)
             .to(".top-left-leaf", { y: -300 }, 0)
-            .to(".bottom-left-leaf", { x: 80, y: -80 }, 0)
-            .to(".bottom-right-leaf", { x: -100, y: -100 }, 0);
 
 
         //   hero video animation
@@ -94,7 +92,7 @@ const Hero = () => {
 
     return (
         <>
-            <section id='home' className='noisy relative h-fit w-full px-5 md:px-15 bg-black/95 overflow-hidden'>
+            <section id='home' className='noisy md:min-h-screen relative px-5 md:px-15 bg-black/95 '>
 
                 {/* Hero top */}
                 <div className=' pt-40  md:pt-35 flex flex-col gap-2'>
@@ -128,7 +126,7 @@ const Hero = () => {
 
 
                 {/* hero center spacing */}
-                <div className='h-[38rem] md:h-[14rem]' />
+                {/* <div className='h-[38rem] md:h-[14rem]' /> */}
 
                 {/* leafs images */}
 
@@ -153,71 +151,12 @@ const Hero = () => {
                     />
                 </div>
 
-                {/* bottom left*/}
-                <div className='bottom-left-leaf absolute h-30 w-30 md:h-78 md:w-78 bottom-[53%] md:-bottom-30 left-0 md:-left-30 '>
-                    <Image
-                        src='/images/hero-bottom-left-leaf.png'
-                        alt='leaf-image'
-                        fill
-                        objectFit='cover'
-
-                    />
-                </div>
-
-                {/* bottom right*/}
-                <div className='bottom-right-leaf absolute h-30 w-30  md:h-78 md:w-78 bottom-[27%] md:-bottom-30 right-0 md:-right-30'>
-                    <Image
-                        src='/images/hero-bottom-right-leaf.png'
-                        alt='leaf-image'
-                        fill
-                        objectFit='cover'
-                    />
-                </div>
 
 
-                {/* Hero Bottom */}
-                <div className=' flex flex-col md:flex-row gap-25 md:gap-0 md:justify-between '>
-
-                    {/* Popular Drinks */}
-                    <div className='flex flex-col gap-8 md:z-10'>
-                        <h2 className='text-xl font-bold'>Most popular drinks:</h2>
-                        <div className='flex flex-col gap-7 md:gap-9'>
-                            {popularDrinks.map((item) => (
-                                <div key={item.title} className=' flex justify-between md:gap-26'>
-                                    <div>
-                                        <h3 className='text-xl font-modern-negra-demo text-yellow-200'>{item.title}</h3>
-                                        <h4 className='text-sm font-semibold'>{item.info}</h4>
-                                    </div>
-                                    <span>
-                                        <h2 className='text-xl font-semibold'>{item.price}</h2>
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Loved Drinks */}
-                    <div className='flex flex-col gap-8 mb-20 md:z-10'>
-                        <h2 className='text-xl font-bold'>Most loved drinks:</h2>
-                        <div className='flex flex-col gap-7 '>
-                            {lovedDrinks.map((item) => (
-                                <div key={item.title} className='flex justify-between md:gap-26'>
-                                    <div>
-                                        <h3 className='text-xl font-modern-negra-demo text-yellow-200'>{item.title}</h3>
-                                        <h4 className='text-sm font-semibold'>{item.info}</h4>
-                                    </div>
-                                    <span>
-                                        <h2 className='text-xl font-semibold'>{item.price}</h2>
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
             </section>
 
             {/* Glass vid animation */}
-            {/* <div className="absolute inset-0 ">
+            {/* <div className=" absolute inset-0">
                 <video
                     ref={videoRef}
                     muted

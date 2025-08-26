@@ -9,11 +9,11 @@ import HeroBottom from "@/sections/HeroBottom";
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <HeroBottom/>
       <AboutUs/>
-      <Art /> 
+      {/* <Art />  */}
       <DrinkMenu />
       <Contact />
 

@@ -1,8 +1,32 @@
+'use client'
+import { gsap } from "gsap";
 import React from 'react'
+import { ScrollTrigger } from 'gsap/all';
 import Image from 'next/image'
-import { drinkImages, socialImages } from '@/constants'
+import { useGSAP } from '@gsap/react'
+import { socialImages } from '@/constants'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+
+    useGSAP(() => {
+
+        // Leafs animations (single timeline, single ScrollTrigger)
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#contact",
+                start: "top 50%",
+                end: "bottom top",
+                scrub: 0.3,
+                // markers: true,
+            }
+        })
+            .to(".contact-top-right-leaf", { x: -90, y: 90 }, 0)
+            .to(".contact-bottom-left-leaf", { x: 90, y: -90 }, 0)
+
+    });
+
     return (
         <section id='contact' className='relative h-fit w-full px-8 bg-black overflow-hidden'>
 
@@ -12,7 +36,7 @@ const Contact = () => {
             </div>
 
             {/* leafs images */}
-            <div className='absolute h-35 w-25 md:h-65 md:w-65 -top-10 -right-10'>
+            <div className='contact-top-right-leaf absolute h-35 w-25 md:h-70 md:w-70 -top-10 -right-10 md:-top-20 md:-right-20'>
                 <Image
                     src='/images/contact-top-right-leaf.png'
                     alt='leaf-image'
@@ -21,7 +45,7 @@ const Contact = () => {
                 />
             </div>
 
-            <div className='hidden md:flex absolute md:h-70 md:w-70 -bottom-10 -left-10'>
+            <div className='contact-bottom-left-leaf hidden md:flex absolute md:h-70 md:w-70 -bottom-10 -left-10 md:-bottom-20 md:-left-20'>
                 <Image
                     src='/images/contact-bottom-left-leaf.png'
                     alt='leaf-image'

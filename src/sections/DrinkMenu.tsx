@@ -1,13 +1,37 @@
+'use client'
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/all';
 import React from 'react'
 import Image from 'next/image'
 import { drinkImages } from '@/constants'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const DrinkMenu = () => {
+
+    useGSAP(() => {
+
+        // Leafs animations (single timeline, single ScrollTrigger)
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#drink-menu",
+                start: "top 50%",
+                end: "bottom top",
+                scrub: 0.3,
+                // markers: true,
+            }
+        })
+            .to(".drinkMenu-right-leaf", { x: -100, y: 150 }, 0)
+            .to(".drinkMenu-left-leaf", { x: 80, y: -80 }, 0)
+
+    })
+
     return (
         <section id='drink-menu' className='relative h-fit w-full px-5 bg-black overflow-hidden'>
 
             {/* leafs images */}
-            <div className='absolute h-35 w-25 md:h-55 md:w-55 top-0 md:-top-18 right-0'>
+            <div className='drinkMenu-right-leaf absolute h-35 w-25 md:h-75 md:w-75 top-0 md:-top-30 right-0 md:-right-20'>
                 <Image
                     src='/images/drinkMenu-right-leaf.png'
                     alt='leaf-image'
@@ -15,7 +39,7 @@ const DrinkMenu = () => {
                     objectFit='cover'
                 />
             </div>
-            <div className='absolute h-35 w-25 md:h-55 md:w-55 -bottom-5 -left-5'>
+            <div className=' drinkMenu-left-leaf absolute h-35 w-25 md:h-75 md:w-75 -bottom-5 md:-bottom-30  left-5 md:-left-20 '>
                 <Image
                     src='/images/drinkMenu-left-leaf.png'
                     alt='leaf-image'
@@ -72,7 +96,7 @@ const DrinkMenu = () => {
 
                 {/* Recipe Highlight + slider drink images */}
                 <div className='hidden md:flex pl-5  md:justify-between '>
-                    <div className='md:flex flex-col md:gap-3 md:justify-end'>
+                    <div className='z-10 md:flex flex-col md:gap-3 md:justify-end'>
                         <h4 className='md:text-lg'>Recipe for:</h4>
                         <h3 className='text-6xl font-modern-negra-demo text-yellow-200'>Classic</h3>
                     </div>

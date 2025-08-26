@@ -65,8 +65,8 @@ const Art = () => {
                             {checkStatementMd1.map((item) => (
                                 <div key={item.statement} className='flex  flex-col pb-4'>
                                     <div className='flex gap-1.5'>
-                                        <img src="/images/check.png" alt="check" />
-                                        <p className='text'>{item.statement}</p>
+                                        <img src="/images/check.png" alt="check"  width={20}/>
+                                        <p className=''>{item.statement}</p>
                                     </div>
                                 </div>
                             ))}
@@ -75,8 +75,8 @@ const Art = () => {
                             {checkStatementMd2.map((item) => (
                                 <div key={item.statement} className='flex  flex-col pb-4'>
                                     <div className='flex gap-1.5'>
-                                        <img src="/images/check.png" alt="check" />
-                                        <p className='text'>{item.statement}</p>
+                                        <img src="/images/check.png" alt="check" width={20}/>
+                                        <p className=''>{item.statement}</p>
                                     </div>
                                 </div>
                             ))}

@@ -24,83 +24,83 @@ const Hero = () => {
         return () => window.removeEventListener('resize', checkIsMobile);
     }, []);
 
-    // useGSAP(() => {
+    useGSAP(() => {
 
-    //     //hero title
-    //     const heroSplit = new SplitText(".title", {
-    //         type: "chars"
-    //     });
+        //hero title
+        const heroSplit = new SplitText(".title", {
+            type: "chars"
+        });
 
-    //     //hero subtitle
-    //     const paragraphSplit = new SplitText(".subtitle", {
-    //         type: "lines"
-    //     });
+        //hero subtitle
+        const paragraphSplit = new SplitText(".subtitle", {
+            type: "lines"
+        });
 
-    //     // Apply text-gradient class once before animating
-    //     heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+        // Apply text-gradient class once before animating
+        heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-    //     gsap.from(heroSplit.chars, {
-    //         opacity: 0,
-    //         yPercent: 100,
-    //         duration: 1.8,
-    //         ease: "expo.out",
-    //         stagger: 0.06,
-    //     });
+        gsap.from(heroSplit.chars, {
+            opacity: 0,
+            yPercent: 100,
+            duration: 1.8,
+            ease: "expo.out",
+            stagger: 0.06,
+        });
 
-    //     gsap.from(paragraphSplit.lines, {
-    //         opacity: 0,
-    //         yPercent: 100,
-    //         // y: 100,
-    //         duration: 1.8,
-    //         ease: "expo.out",
-    //         stagger: 0.06,
-    //         delay: 1,
-    //     });
+        gsap.from(paragraphSplit.lines, {
+            opacity: 0,
+            yPercent: 100,
+            // y: 100,
+            duration: 1.8,
+            ease: "expo.out",
+            stagger: 0.06,
+            delay: 1,
+        });
 
-    //     // Leafs animations (single timeline, single ScrollTrigger)
-    //     gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: "#home",
-    //             start: "top top",
-    //             end: "bottom top",
-    //             scrub: 0.5,
-    //             // markers: true,
-    //         }
-    //     })
-    //         .to(".top-right-leaf", { y: 350 }, 0)
-    //         .to(".top-left-leaf", { y: -300 }, 0)
+        // Leafs animations (single timeline, single ScrollTrigger)
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#home",
+                start: "top top",
+                end: "bottom top",
+                scrub: 0.5,
+                // markers: true,
+            }
+        })
+            .to(".top-right-leaf", { y: 350 }, 0)
+            .to(".top-left-leaf", { y: -300 }, 0)
 
 
-    //     //   hero video animation (wait for metadata, then create timeline)
-    //     const startValue = isMobile ? "top 50%" : "center 60%";
-    //     const endValue = isMobile ? "120% top" : "bottom top";
+        //   hero video animation (wait for metadata, then create timeline)
+        const startValue = isMobile ? "top 50%" : "center 60%";
+        const endValue = isMobile ? "120% top" : "bottom top";
 
-    //     const setupVideoScroll = () => {
-    //         if (!videoRef.current) return;
-    //         const duration = videoRef.current.duration;
-    //         gsap.timeline({
-    //             scrollTrigger: {
-    //                 trigger: videoRef.current,
-    //                 start: startValue,
-    //                 end: endValue,
-    //                 scrub: true,
-    //                 pin: true,
-    //             },
-    //         }).to(videoRef.current, {
-    //             currentTime: duration,
-    //             ease: 'none',
-    //         });
-    //     };
+        const setupVideoScroll = () => {
+            if (!videoRef.current) return;
+            const duration = videoRef.current.duration;
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: videoRef.current,
+                    start: startValue,
+                    end: endValue,
+                    scrub: true,
+                    pin: true,
+                },
+            }).to(videoRef.current, {
+                currentTime: duration,
+                ease: 'none',
+            });
+        };
 
-    //     if (videoRef.current) {
-    //         if (videoRef.current.readyState >= 1) {
-    //             setupVideoScroll();
-    //         } else {
-    //             videoRef.current.onloadedmetadata = setupVideoScroll;
-    //         }
-    //     }
+        if (videoRef.current) {
+            if (videoRef.current.readyState >= 1) {
+                setupVideoScroll();
+            } else {
+                videoRef.current.onloadedmetadata = setupVideoScroll;
+            }
+        }
 
-    // }, [isMobile]);
+    }, [isMobile]); //re-run gsap anim whenever the value of isMobile changes.
 
     return (
         <>

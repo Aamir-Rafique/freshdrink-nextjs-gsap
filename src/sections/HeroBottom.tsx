@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HeroBottom = () => {
 
-        useGSAP(() => {
-            // Leafs animations (single timeline, single ScrollTrigger)
+    useGSAP(() => {
+        // Leafs animations (single timeline, single ScrollTrigger)
         gsap.timeline({
             scrollTrigger: {
                 trigger: "#hero-bottom",
@@ -22,16 +22,19 @@ const HeroBottom = () => {
             }
         })
             .to(".bottom-left-leaf", { x: 80, y: -80 }, 0)
-            .to(".bottom-right-leaf", { x: -100, y: -100 }, 0);
- 
-        }, []);
+            .to(".bottom-right-leaf", { x: -100, y: -100 }, 0)
+
+            .to(".bottom-left-leaf-mob", { x: 30, y: -30, scale: 1.2 }, 0)
+            .to(".bottom-right-leaf-mob", { x: -30, y: -30, scale: 1.2 }, 0);
+
+    }, []);
 
     return (
-        <section id='hero-bottom' className='relative md:px-12 min-h-screen  overflow-hidden'>
+        <section id='hero-bottom' className='relative px-6 md:px-12 min-h-screen overflow-hidden'>
             {/* bottom left*/}
-            <div className='bottom-left-leaf absolute h-30 w-30 md:h-78 md:w-78 bottom-0 md:-bottom-30 left-0 md:-left-30 '>
+            <div className='bottom-left-leaf-mob md:bottom-left-leaf absolute h-35 w-30 md:h-78 md:w-78 -bottom-10 md:-bottom-30 -left-10 md:-left-30 '>
                 <Image
-                    src='/images/hero-bottom-left-leaf.png'     
+                    src='/images/hero-bottom-left-leaf.png'
                     alt='leaf-image'
                     fill
                     objectFit='cover'
@@ -39,7 +42,7 @@ const HeroBottom = () => {
             </div>
 
             {/* bottom right*/}
-            <div className='bottom-right-leaf absolute h-30 w-30  md:h-78 md:w-78 bottom-[27%] md:-bottom-30 right-0 md:-right-30'>
+            <div className='bottom-right-leaf-mob md:bottom-right-leaf absolute h-35 w-35  md:h-78 md:w-78 -bottom-10 md:-bottom-30 -right-10 md:-right-30'>
                 <Image
                     src='/images/hero-bottom-right-leaf.png'
                     alt='leaf-image'
@@ -50,7 +53,7 @@ const HeroBottom = () => {
 
 
             {/* Hero Bottom */}
-            <div className='pt-40 flex flex-col md:flex-row gap-25 md:gap-0 md:justify-between '>
+            <div className='pt-40 flex flex-col md:flex-row gap-20 md:gap-0 md:justify-between '>
 
                 {/* Popular Drinks */}
                 <div className='flex flex-col gap-8 md:z-10'>

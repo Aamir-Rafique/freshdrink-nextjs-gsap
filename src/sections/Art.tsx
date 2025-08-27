@@ -24,7 +24,7 @@ const Art = () => {
     }, []);
 
     useGSAP(() => {
-        const start = isMobile ? 'top 20%' : 'top top   ';
+        const start = isMobile ? 'top 20%' : 'top 0%';
 
         const maskTimeline = gsap.timeline({
             scrollTrigger: {

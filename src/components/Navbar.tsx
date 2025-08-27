@@ -15,8 +15,8 @@ const Navbar = () => {
                 <a href="#home">Home</a>
                 <a href="#about-us">About Us</a>
                 <a href="#art">The &nbsp;Art</a>
-                <a href="#drink-menu">Drinks</a>
-                <a href="#contact">Contact</a>
+                <a href="#drink-menu" className='hidden md:flex'>Drinks</a>
+                <a href="#contact" >Contact</a>
             </div>
         </nav>
     )

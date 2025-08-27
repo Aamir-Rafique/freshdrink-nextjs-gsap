@@ -73,7 +73,7 @@ const Hero = () => {
 
         //   hero video animation (wait for metadata, then create timeline)
         const startValue = isMobile ? "top 50%" : "center 60%";
-        const endValue = isMobile ? "120% top" : "bottom top";
+        const endValue = isMobile ? "100% top" : "bottom top";
 
         const setupVideoScroll = () => {
             if (!videoRef.current) return;
@@ -105,20 +105,20 @@ const Hero = () => {
 
     return (
         <>
-            <section id='home' className='min-h-screen relative px-5 md:px-15 bg-black/95 overflow-hidden'>
+            <section id='home' className={` ${isMobile?'noisy':''} min-h-screen relative  md:px-15 bg-black/95 `}>
 
                 {/* Hero top */}
                 <div className=' pt-40  md:pt-35 flex flex-col gap-2 '>
                     <div className='flex justify-center'>
-                        <h1 className='z-10 title text-7xl md:text-[12rem]  font-modern-negra-demo bg-gradient-to-t from-[#FFFFFF] to-[#F1F1F1] bg-clip-text text-transparent'>
+                        <h1 className='px-2 z-10 title text-7xl md:text-[12rem]  font-modern-negra-demo bg-gradient-to-t from-[#FFFFFF] to-[#F1F1F1] bg-clip-text text-transparent'>
                             LEMONADE
                         </h1>
                     </div>
 
-                    <p className='subtitle text-xl w-[80%] md:hidden '>
+                    <p className='px-5 subtitle text-xl w-[80%] md:hidden z-20'>
                         Every drink on our menu is a blend of premium ingredients, creative flair, and timeless recipes — designed to delight your senses.
                     </p>
-                    <a href="#drink-menu" className='text-xl font-bold mt-2 md:hidden'>View drinks</a>
+                    <a href="#drink-menu" className='px-5 text-xl font-bold mt-2 md:hidden z-20'>View drinks</a>
                 </div>
 
                 {/* hero  subtitles - if screen >= md:*/}
@@ -168,13 +168,20 @@ const Hero = () => {
 
             {/* Glass vid animation */}
             <div className=" absolute inset-0 min-h-screen">
+                <Image
+                src='/images/drink1.png'
+                alt='Glass'
+                height={100}
+                width={600}
+                className='md:hidden w-full absolute h-1/2 md:h-[80%] bottom-0 left-0 contrast-60 brightness-50'
+                />
                 <video
                     ref={videoRef}
                     muted
                     playsInline   //to prevent showing seekbar or vol up/down
                     preload="auto"
                     src="/videos/output.mp4"
-                    className=' w-full absolute h-1/2 md:h-[80%] bottom-0 left-0 object-cover md:object-contain object-bottom'
+                    className='hidden md:flex w-full absolute h-1/2 md:h-[80%] bottom-0 left-0 object-cover md:object-contain object-bottom'
                 />
             </div>
 

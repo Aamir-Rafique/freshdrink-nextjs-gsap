@@ -105,7 +105,7 @@ const Hero = () => {
 
     return (
         <>
-            <section id='home' className={` ${isMobile?'noisy':''} min-h-screen relative  md:px-15 bg-black/95 `}>
+            <section id='home' className={` ${isMobile?'noisy':'bg-black/95'} min-h-screen relative  md:px-15  `}>
 
                 {/* Hero top */}
                 <div className=' pt-40  md:pt-35 flex flex-col gap-2 '>

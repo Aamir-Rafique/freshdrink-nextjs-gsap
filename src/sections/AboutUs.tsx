@@ -45,6 +45,7 @@ const AboutUs = () => {
                 start: 'top 75%',
                 end: 'bottom 60%',
                 // markers: true,
+                scrub: 0.5,
             }
         });
 
@@ -59,8 +60,8 @@ const AboutUs = () => {
             <div className='pt-30 pb-30 flex flex-col gap-20'>
 
                 <div className='flex flex-col md:flex-row justify-between items-start gap-6'>
-                    <div className='flex flex-col gap-8 items-start'>
-                        <a href="#" className='px-4 py-2 text-sm font-semibold rounded-3xl bg-white text-black'>Best Drinks</a>
+                    <div className='flex flex-col gap-8 items-start '>
+                        <a href="#drink-menu" className='px-4 py-2 text-sm font-semibold rounded-3xl bg-white text-black'>Best Drinks</a>
                         <h2 className='tagline about-title text-5xl font-modern-negra-demo' >
                             Where every detail<br />
                             matters — from muddle<br />

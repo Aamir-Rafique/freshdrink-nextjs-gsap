@@ -44,24 +44,22 @@ const Art = () => {
 
 
     return (
-        <section id='art' className='relative h-fit w-full px-6 bg-black '>
+        <section id='art' className='relative h-fit w-full md:px-6 bg-black '>
 
             {/*  bg image - round gray/white - radial gradient*/}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-x-hidden">
-                <div className="w-full h-[400px] md:w-1/3 md:h-[45%]  rounded-full bg-white/30 blur-[80px]" />
+                <div className="w-full h-[300px] md:w-1/3 md:h-[45%]  rounded-full bg-white/30 blur-[80px]" />
             </div>
 
 
             <div className='py-30 w-full '>
 
                 <div className='relative flex flex-col items-center  '>
-                    <h1 className='will-fade absolute text-8xl md:text-[17rem] md:text-[#505050] font-modern-negra-demo'>The ART</h1>
-                    <div className='relative h-50 w-50 md:h-100 md:w-100 mt-5 md:mt-22'>
-
-                    </div>
+                    <h1 className='will-fade absolute text-8xl md:text-[17rem] text-[#505050] font-modern-negra-demo'>The ART</h1>
+                    <div className='relative h-50 w-50 md:h-100 md:w-100 mt-5 md:mt-22'></div>
 
                     {/* masked image effect*/}
-                    <div className="absolute  w-full md:w-[60vw] h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden  top-0 md:top-[60%] md:-translate-y-1/2 left-1/2 -translate-x-1/2">
+                    <div className="absolute  w-full md:w-[60vw] h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden top-0 md:top-[60%] md:-translate-y-1/2 left-1/2 -translate-x-1/2">
                         <img
                             src="/images/under-img.jpg"
                             alt="Drink"
@@ -95,12 +93,12 @@ const Art = () => {
                 </div>
 
                 {/* check statements - screens < md  i.e. mobiles etc.*/}
-                <div className='will-fade md:hidden'>
+                <div className='px-7 will-fade md:hidden mt-30 '>
                     {checkStatements.map((item) => (
                         <div key={item.statement} className='flex  flex-col pb-4'>
                             <div className='flex gap-1.5'>
-                                <img src="/images/check.png" alt="check" />
-                                <p className='text'>{item.statement}</p>
+                                <img src="/images/check.png" alt="check" width={20}/>
+                                <p className='text-lg'>{item.statement}</p>
                             </div>
                         </div>
                     ))}
@@ -109,7 +107,7 @@ const Art = () => {
 
 
                 {/* hidden text */}
-                <div className='masked-container w-ful flex justify-center mt-10'>
+                <div className='absolute bottom-[10%] md:relative masked-container w-ful flex justify-center mt-10 '>
                     <div className='text-center md:flex flex-col md:w-1/2'>
                         <h2 className="will-fade text-5xl font-modern-negra-demo">Sip-Worthy Perfection</h2>
                         <div id="masked-content" className='space-y-5 opacity-0'>

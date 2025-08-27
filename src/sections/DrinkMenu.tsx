@@ -26,7 +26,11 @@ const DrinkMenu = () => {
         })
             .to(".drinkMenu-right-leaf", { x: -100, y: 150 }, 0)
             .to(".drinkMenu-left-leaf", { x: 80, y: -80 }, 0)
+            .to(".drinkMenu-right-leaf-mob", { x: -60, y: 60 }, 0)
+            .to(".drinkMenu-left-leaf-mob", { x: 40, y: -45 }, 0)
     }, [])
+
+
 
     useGSAP(() => {
         // Drink menu animations
@@ -41,7 +45,7 @@ const DrinkMenu = () => {
         <section id='drink-menu' className='relative h-fit w-full px-5 bg-black overflow-hidden'>
 
             {/* leafs images */}
-            <div className='drinkMenu-right-leaf absolute h-35 w-25 md:h-75 md:w-75 top-0 md:-top-30 right-0 md:-right-20'>
+            <div className='drinkMenu-right-leaf-mob md:drinkMenu-right-leaf absolute h-45 w-45 md:h-75 md:w-75 -top-10 md:-top-30 -right-10 md:-right-20'>
                 <Image
                     src='/images/drinkMenu-right-leaf.png'
                     alt='leaf-image'
@@ -49,7 +53,7 @@ const DrinkMenu = () => {
                     objectFit='cover'
                 />
             </div>
-            <div className=' drinkMenu-left-leaf absolute h-35 w-25 md:h-75 md:w-75 -bottom-5 md:-bottom-30  left-5 md:-left-20 '>
+            <div className='drinkMenu-left-leaf-mob md:drinkMenu-left-leaf absolute h-45 w-45 md:h-75 md:w-75 -bottom-15 md:-bottom-30  -left-10 md:-left-20 '>
                 <Image
                     src='/images/drinkMenu-left-leaf.png'
                     alt='leaf-image'
@@ -130,25 +134,29 @@ const DrinkMenu = () => {
                     </div>
                 ))}
 
-                {/* slider drinks images fot mobile */}
-                <div className=' md:hidden'>
-                    <div className='relative h-90 w-90 md:h-105 md:w-105 mt-5 md:mt-0 ' >
-                        <Image
-                            src='/images/drink1.png'
-                            alt='Mask Image'
-                            fill
-                        />
-                    </div>
-                </div>
+
 
 
                 {/* Recipe Highlight for screen < md i.e. mobile*/}
-                <div className='md:hidden pt-20 pb-10 flex flex-col gap-6'>
-                    <h4>Recipe for:</h4>
-                    <h3 className='text-4xl font-modern-negra-demo text-yellow-200'>Classic</h3>
-                    <h3 className='text-3xl font-dm-serif-text'>Simple Ingredients, Bold Flavor</h3>
-                    <p>Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.</p>
-                </div>
+                {drinkMenu.map((drink, index) => (
+                    currentIndex === index
+                    &&
+                    <div key={index} className=' md:hidden'>
+                        <div className=' drink-image  relative h-90 w-90 md:h-105 md:w-105 mt-5 md:mt-0 ' >
+                            <Image
+                                src={drink.image}
+                                alt='Mask Image'
+                                fill
+                            />
+                        </div>
+                        <div className='md:hidden pt-20 pb-10 flex flex-col gap-6'>
+                            <h4>Recipe for:</h4>
+                            <h3 className='drink-title text-4xl font-modern-negra-demo text-yellow-200'>{drink.title}</h3>
+                            <h3 className='drink-para text-3xl font-dm-serif-text'>{drink.tagline}</h3>
+                            <p className="drink-para">{drink.description}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </section>
     )

@@ -85,6 +85,7 @@ const Hero = () => {
                     end: endValue,
                     scrub: true,
                     pin: true,
+                    // markers:true,
                 },
             }).to(videoRef.current, {
                 currentTime: duration,
@@ -166,7 +167,7 @@ const Hero = () => {
             </section>
 
             {/* Glass vid animation */}
-            <div className="hidden md:flex absolute inset-0 ">
+            <div className=" md:flex absolute inset-0 ">
                 <video
                     ref={videoRef}
                     muted

@@ -36,7 +36,7 @@ const Contact = () => {
             </div>
 
             {/* leafs images */}
-            <div className='contact-top-right-leaf absolute h-35 w-25 md:h-70 md:w-70 -top-10 -right-10 md:-top-20 md:-right-20'>
+            <div className='contact-top-right-leaf absolute h-35 w-35 md:h-70 md:w-70 -top-15 -right-15 md:-top-20 md:-right-20'>
                 <Image
                     src='/images/contact-top-right-leaf.png'
                     alt='leaf-image'
@@ -45,7 +45,7 @@ const Contact = () => {
                 />
             </div>
 
-            <div className='contact-bottom-left-leaf hidden md:flex absolute md:h-70 md:w-70 -bottom-10 -left-10 md:-bottom-20 md:-left-20'>
+            <div className='contact-bottom-left-leaf md:flex absolute h-40 w-40 md:h-70 md:w-70 -bottom-18 -left-18 md:-bottom-20 md:-left-20'>
                 <Image
                     src='/images/contact-bottom-left-leaf.png'
                     alt='leaf-image'
@@ -55,8 +55,8 @@ const Contact = () => {
             </div>
 
             {/* Contact Info */}
-            <div className='py-16 h-[42rem] md:h-[50rem] flex flex-col justify-between items-center'>
-                <h3 className='text-5xl md:text-6xl font-modern-negra-demo'>Where to Find Us</h3>
+            <div className='py-16 h-[42rem] md:h-[50rem] flex flex-col justify-between items-center '>
+                <h3 className='text-5xl md:text-6xl font-modern-negra-demo z-10'>Where to Find Us</h3>
                 <div className='text-center space-y-2 '>
                     <h2 className=''>VISIT OUR SHOP</h2>
                     <p className='text-sm md:text-2xl'>345, Raq Blvd. #300, Knowhere, BA 90010</p>

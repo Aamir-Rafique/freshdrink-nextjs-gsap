@@ -105,7 +105,7 @@ const Hero = () => {
 
     return (
         <>
-            <section id='home' className='min-h-screen relative px-5 md:px-15 md:bg-black/95 '>
+            <section id='home' className='min-h-screen relative px-5 md:px-15 bg-black/95 overflow-hidden'>
 
                 {/* Hero top */}
                 <div className=' pt-40  md:pt-35 flex flex-col gap-2 '>
@@ -167,7 +167,7 @@ const Hero = () => {
             </section>
 
             {/* Glass vid animation */}
-            <div className=" md:flex absolute inset-0 ">
+            <div className=" absolute inset-0 min-h-screen">
                 <video
                     ref={videoRef}
                     muted

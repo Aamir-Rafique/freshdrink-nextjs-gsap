@@ -30,7 +30,7 @@ const HeroBottom = () => {
     }, []);
 
     return (
-        <section id='hero-bottom' className='relative px-6 md:px-12 min-h-screen overflow-hidden'>
+        <section id='hero-bottom' className=' relative px-6 md:px-12 min-h-screen  overflow-hidden'>
             {/* bottom left*/}
             <div className='bottom-left-leaf-mob md:bottom-left-leaf absolute h-35 w-30 md:h-78 md:w-78 -bottom-10 md:-bottom-30 -left-10 md:-left-30 '>
                 <Image

@@ -81,7 +81,7 @@ const DrinkMenu = () => {
                 {/* right  and left arrows */}
                 <div className='mt-20 md:mt-10 md:px-10 flex justify-between'>
                     <div className='relative h-9 w-9  md:h-10 md:w-10 cursor-pointer'>
-                        <img src="/images/right-arrow.png" alt="right-arrow" aria-hidden="true" className='hover:bg-gray-800 rounded-2xl duration-300'
+                        <img src="/images/right-arrow.png" alt="right-arrow" aria-hidden="true" className={`hover:bg-gray-800 focus:bg-gray-800 ${currentIndex === 0 ? 'contrast-20':'brightness-150'} rounded-2xl duration-300`}
                             onClick={() => {
                                 if (currentIndex > 0) {
                                     setCurrentIndex(currentIndex - 1)
@@ -91,7 +91,7 @@ const DrinkMenu = () => {
                         />
                     </div>
                     <div className='relative h-9 w-9 md:h-10 md:w-10 cursor-pointer'>
-                        <img src="/images/left-arrow.png" alt="left-arrow" aria-hidden="true" className='hover:bg-gray-800 rounded-2xl duration-300'
+                        <img src="/images/left-arrow.png" alt="left-arrow" aria-hidden="true" className={`hover:bg-gray-800 focus:bg-gray-800 ${currentIndex === 3 ? 'contrast-20':'brightness-150'} rounded-2xl duration-300`}
                             onClick={() => {
                                 if (currentIndex < 3) {
                                     setCurrentIndex(currentIndex + 1)

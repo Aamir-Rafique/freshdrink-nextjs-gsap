@@ -11,7 +11,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className='h-13 md:h-1/2 w-full md:w-[40%] md:mr-5 flex justify-center items-center  gap-6 md:gap-12 text-sm md:text-base font-semibold md:font-normal'>
+            <div className='h-13 md:h-1/2 w-full md:w-[40%] md:mr-5 flex justify-center items-center  gap-9 md:gap-12 text-sm md:text-base font-semibold md:font-normal '>
                 <a href="#home">Home</a>
                 <a href="#about-us">About Us</a>
                 <a href="#art" className='hidden md:flex'>The &nbsp;Art</a>

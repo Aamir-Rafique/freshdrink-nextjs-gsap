@@ -1,45 +1,15 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Modern Negra Demo';
-  src: url('/fonts/Modern Negra Demo.ttf') format('opentype');
-  /* font-weight: 700; */
-  /* font-style: normal; */
-  /* font-display: swap; */
-}
+/* use variables injected by next/font */
+.font-modern-negra-demo { font-family: var(--font-negra), sans-serif; }
+.font-mona-sans { font-family: var(--font-mona), sans-serif; }
+.font-dm-serif-text { font-family: var(--font-dmserif), serif; }
 
-@font-face {
-  font-family: 'Mona Sans';
-  src: url('/fonts/MonaSans-VariableFont_wdth,wght.ttf') format('opentype');
-  /* font-weight: 700; */
-  /* font-style: normal; */
-  /* font-display: swap; */
-}
-
-@font-face {
-  font-family: 'DM Serif Text';
-  src: url('/fonts/DMSerifText-Regular.ttf') format('opentype');
-  /* font-weight: 700; */
-  /* font-style: normal; */
-  /* font-display: swap; */
-}
-
-.font-modern-negra-demo {
-  font-family: 'Modern Negra Demo', sans-serif;
-}
-
-.font-mona-sans {
-  font-family: 'Mona Sans', sans-serif;
-}
-
-.font-dm-serif-text {
-  font-family: 'DM Serif Text', sans-serif;
-}
 
 html,
 body {
   width: 100%;
-  font-family: 'Mona Sans', sans-serif;
+  font-family: var(--font-mona), sans-serif;
   background-color: black;
   color: white;
   overflow-x: hidden;

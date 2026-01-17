@@ -8,7 +8,7 @@ import HeroBottom from "@/sections/HeroBottom";
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-7xl mx-auto overflow-hidden">
       <Navbar />
       <Hero />
       <HeroBottom/>

@@ -110,7 +110,7 @@ const Hero = () => {
                 {/* Hero top */}
                 <div className=' pt-40  md:pt-35 flex flex-col gap-2 '>
                     <div className='flex justify-center'>
-                        <h1 className='px-2 z-10 title text-7xl md:text-[12rem]  font-modern-negra-demo bg-gradient-to-t from-[#FFFFFF] to-[#F1F1F1] bg-clip-text text-transparent'>
+                        <h1 className='px-2 z-20 title text-[18.5vw] lg:text-[15vw] font-modern-negra-demo bg-linear-to-t from-[#FFFFFF] to-[#F1F1F1] bg-clip-text text-transparent'>
                             LEMONADE
                         </h1>
                     </div>
